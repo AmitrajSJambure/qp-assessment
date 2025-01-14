@@ -21,11 +21,11 @@ public class SecurityConfig {
     public UserDetailsService userDetailsService(PasswordEncoder passwordEncoder) {
         InMemoryUserDetailsManager manager = new InMemoryUserDetailsManager();
         manager.createUser(User.withUsername("admin")
-                .password(passwordEncoder.encode("admin123"))
+                .password(passwordEncoder.encode("imadmin"))
                 .roles("ADMIN")
                 .build());
         manager.createUser(User.withUsername("user")
-                .password(passwordEncoder.encode("user123"))
+                .password(passwordEncoder.encode("imuser"))
                 .roles("USER")
                 .build());
         return manager;
